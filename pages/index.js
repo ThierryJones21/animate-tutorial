@@ -1,19 +1,18 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import { useEffect } from 'react';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   useEffect(() => {
     const copyLogos = () => {
-      const logosSlide = document.querySelectorAll('.logos-slide');
-      logosSlide.forEach(slide => {
-        const copy = slide.cloneNode(true);
-        document.querySelector('.logos').appendChild(copy);
-      });
+      const logosSlide = document.querySelector(`.${styles.slide}`);
+      const copy = logosSlide.cloneNode(true);
+      document.querySelector(`.${styles.logos}`).appendChild(copy);
     };
+
     copyLogos();
   }, []);
-  
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +23,7 @@ export default function Home() {
       <main>
         <section>
           <h1 className={styles.title}>
-            Welcome to <a href=''> TDOESDEV </a>JS animation tutotrial
+            Welcome to <a href=''> TDOESDEV </a>JS animation tutorial
           </h1>
         </section>
 
@@ -36,8 +35,7 @@ export default function Home() {
 
         <section>
           <div className={styles.logos}>
-            <div className={`${styles.slide} ${styles.slide1}`}>
-              {/* First set of logos */}
+            <div className={styles.slide}>
               <img src="./logos/apple.svg" />
               <img src="./logos/coca-cola.svg" />
               <img src="./logos/ethereum.svg" />
@@ -48,29 +46,6 @@ export default function Home() {
               <img src="./logos/spotify.svg" />
               <img src="./logos/under-armour.svg" />
               <img src="./logos/xbox-one.svg" />
-              <img src="./logos/apple.svg" />
-              <img src="./logos/coca-cola.svg" />
-              <img src="./logos/ethereum.svg" />
-              <img src="./logos/facebook-messenger.svg" />
-              <img src="./logos/forbes.svg" />
-            </div>
-            <div className={`${styles.slide} ${styles.slide2}`}>
-              {/* Second set of logos */}
-              <img src="./logos/apple.svg" />
-              <img src="./logos/coca-cola.svg" />
-              <img src="./logos/ethereum.svg" />
-              <img src="./logos/facebook-messenger.svg" />
-              <img src="./logos/forbes.svg" />
-              <img src="./logos/mcdonald.svg" />
-              <img src="./logos/soundcloud.svg" />
-              <img src="./logos/spotify.svg" />
-              <img src="./logos/under-armour.svg" />
-              <img src="./logos/xbox-one.svg" />
-              <img src="./logos/apple.svg" />
-              <img src="./logos/coca-cola.svg" />
-              <img src="./logos/ethereum.svg" />
-              <img src="./logos/facebook-messenger.svg" />
-              <img src="./logos/forbes.svg" />
             </div>
           </div>
         </section>
@@ -158,8 +133,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
-

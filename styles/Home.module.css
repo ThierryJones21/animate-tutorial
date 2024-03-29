@@ -80,28 +80,15 @@
 }
 
 .slide img {
-  height: 50px;
-  margin: 0 40px;
+  height: 100px;
+  margin: 0 100px;
 }
 
-.slide1 {
-  animation: slide1 4s infinite linear;
+.slide {
+  animation: slide 10s infinite linear;
 }
 
-.slide2 {
-  animation: slide2 4s infinite linear;
-}
-
-@keyframes slide1 {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slide2 {
+@keyframes slide {
   from {
     transform: translateX(0);
   }
